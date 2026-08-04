@@ -2,29 +2,46 @@ import React, { useEffect, useState } from 'react';
 import { Upload, ShieldCheck, Sun, Moon, ArrowUp } from 'lucide-react';
 
 export const FloatingBar: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [isDark, setIsDark] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains('dark');
-    setTheme(isDark ? 'dark' : 'light');
+    // 1. Sync theme with html.dark class
+    const checkDark = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    checkDark();
 
-    const observer = new MutationObserver(() => {
-      const darkActive = document.documentElement.classList.contains('dark');
-      setTheme(darkActive ? 'dark' : 'light');
-    });
-
+    const observer = new MutationObserver(checkDark);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
+
+    // 2. Scroll visibility listener: show ONLY when scrolled down > 200px
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-    localStorage.setItem('pdfafy-theme', nextTheme);
-    if (nextTheme === 'dark') {
+    const nextDark = !isDark;
+    setIsDark(nextDark);
+    if (nextDark) {
       document.documentElement.classList.add('dark');
+      localStorage.setItem('pdfafy-theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('pdfafy-theme', 'light');
     }
   };
 
@@ -38,7 +55,13 @@ export const FloatingBar: React.FC = () => {
   };
 
   return (
-    <aside className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 translate-y-3 opacity-80 scale-95 hover:translate-y-0 hover:opacity-100 hover:scale-100 transition-all duration-300 ease-out group">
+    <aside
+      className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-300 ease-out ${
+        isVisible
+          ? 'translate-y-0 opacity-100 scale-100 pointer-events-auto'
+          : 'translate-y-16 opacity-0 scale-90 pointer-events-none'
+      }`}
+    >
       <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 dark:bg-[#121212]/90 backdrop-blur-xl border border-[#ebebeb] dark:border-[#262626] shadow-xl text-xs font-mono text-[#171717] dark:text-[#f5f5f5]">
         {/* ISO Standard Status */}
         <div className="flex items-center gap-2 pr-2 border-r border-[#ebebeb] dark:border-[#262626]">
@@ -59,12 +82,13 @@ export const FloatingBar: React.FC = () => {
         <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
+          title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
           className="w-7 h-7 rounded-full bg-[#fafafa] dark:bg-[#1f1f1f] border border-[#ebebeb] dark:border-[#262626] flex items-center justify-center text-[#171717] dark:text-[#f5f5f5] hover:bg-[#f5f5f5] dark:hover:bg-[#262626] transition-colors cursor-pointer"
         >
-          {theme === 'light' ? (
-            <Moon className="w-3.5 h-3.5" />
-          ) : (
+          {isDark ? (
             <Sun className="w-3.5 h-3.5 text-[#f5a623]" />
+          ) : (
+            <Moon className="w-3.5 h-3.5 text-[#171717]" />
           )}
         </button>
 
