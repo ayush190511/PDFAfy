@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { FloatingBar } from '../components/FloatingBar';
 import '../styles/global.css';
 
 interface Props {
@@ -77,5 +78,8 @@ const {
     <slot />
   </main>
   <Footer />
+
+  <!-- Floating Quick-Action Bar -->
+  <FloatingBar client:load />
 </body>
 </html>
