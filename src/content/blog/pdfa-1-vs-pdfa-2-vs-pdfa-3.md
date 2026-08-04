@@ -8,8 +8,6 @@ tags: ["PDF/A-1", "PDF/A-2", "PDF/A-3", "ISO Standards"]
 featured: true
 ---
 
-# PDF/A-1 vs PDF/A-2 vs PDF/A-3: Which Standard Should You Choose?
-
 The ISO 19005 family has evolved over the years to balance strict archival compliance with modern document features. Understanding the distinctions between **PDF/A-1**, **PDF/A-2**, and **PDF/A-3** ensures you pick the exact specification required for your organization's workflow.
 
 ---

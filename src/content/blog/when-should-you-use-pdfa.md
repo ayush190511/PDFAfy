@@ -1,32 +1,35 @@
 ---
-title: "When Should You Use PDF/A? Practical Business Guide"
-description: "Discover the specific business, legal, and operational scenarios where converting documents to PDF/A is mandatory."
+title: "When Should You Use PDF/A? Practical Checklist"
+description: "A quick diagnostic checklist to help you determine when to convert documents to PDF/A versus standard PDF."
 pubDate: 2026-08-04
-author: "PDFAfy Product Team"
+author: "PDFAfy Compliance Team"
 readTime: "4 min read"
-tags: ["Business", "Guide", "PDF/A", "Use Cases"]
+tags: ["Checklist", "PDF/A", "Use Cases", "Guide"]
 featured: false
 ---
 
-# When Should You Use PDF/A? Practical Business Guide
-
-Not every file generated in a business workflow requires PDF/A compliance. However, identifying key document types that mandate PDF/A prevents legal liability and data loss.
+Not every document requires PDF/A archiving. For temporary drafts, internal Slack attachments, or interactive forms, standard PDF is sufficient. However, for critical records, PDF/A conversion is essential. Use this practical checklist to decide.
 
 ---
 
-## 5 Critical Scenarios Requiring PDF/A
+## PDF/A Use Case Checklist
 
-1. **Contracts & Signed Legal Agreements**:
-   Executing non-disclosure agreements, employment contracts, and vendor agreements in PDF/A ensures the visual terms remain unalterable and reproducible in future litigation.
+### Always Convert to PDF/A If:
+- [x] **Legal Contracts & Agreements**: Real estate deeds, employment contracts, NDA agreements.
+- [x] **Court Filings & Exhibits**: Submissions to US Federal Courts (CM/ECF) or international tribunals.
+- [x] **Financial Records & Audit Files**: Tax filings, annual financial reports, invoices (ZUGFeRD / Factur-X).
+- [x] **Medical & Healthcare Records**: Patient charts, clinical trial results, regulatory submissions.
+- [x] **Government Archives**: Municipal records, public notices, building permits.
+- [x] **Academic & Scientific Research**: Published journal articles, PhD dissertations, patents.
 
-2. **Annual Financial Reports & Tax Audits**:
-   Tax authorities require financial disclosures to be preserved in self-contained PDF/A format to withstand multi-year audits.
+### Standard PDF is Fine If:
+- [ ] Temporary internal memos or draft documents.
+- [ ] Interactive PDF forms requiring dynamic JavaScript calculations.
+- [ ] Password-protected confidential files.
+- [ ] Multimedia presentations containing embedded audio or video clips.
 
-3. **Academic Dissertations & Patents**:
-   Universities and patent offices require research submissions to be archived in PDF/A so historical scientific discoveries remain accessible indefinitely.
+---
 
-4. **Electronic Invoicing (ZUGFeRD & Factur-X)**:
-   Modern Automated Accounts Payable systems require PDF/A-3b to embed machine-readable XML alongside the human-readable invoice layout.
+## Summary
 
-5. **Medical & Patient Healthcare Records**:
-   HIPAA and international health compliance rules mandate long-term immutable record keeping for clinical notes and lab results.
+When long-term visual accuracy and regulatory compliance matter, choose **PDF/A**. Convert your files instantly using [PDFAfy's free client-side converter](/#upload-zone).

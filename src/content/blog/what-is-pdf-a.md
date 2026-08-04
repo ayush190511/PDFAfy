@@ -8,8 +8,6 @@ tags: ["PDF/A", "ISO 19005", "Archiving", "Compliance"]
 featured: true
 ---
 
-# What is PDF/A? Complete Guide to ISO 19005 Compliance
-
 In digital document management, standard PDF files are designed for interactive display and printing today. However, standard PDFs often rely on external system resources—such as system fonts, external hyperlink references, dynamic javascript code, or proprietary media codecs. Over time, as software, operating systems, and hardware evolve, opening a standard PDF 10 or 20 years later can lead to broken fonts, missing layout elements, or corrupted content.
 
 **PDF/A** (Portable Document Format Archival) is an ISO-standardized version of the PDF format specifically engineered for **long-term preservation and digital archiving**.
