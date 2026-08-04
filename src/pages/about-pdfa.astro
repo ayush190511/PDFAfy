@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { generateBreadcrumbSchema } from '../utils/seo';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'About PDF/A', url: '/about-pdfa' },
+];
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+---
+
+<BaseLayout
+  title="Everything About PDF/A Standard (ISO 19005) — PDFAfy"
+  description="Comprehensive guide to PDF/A standards, sub-profiles (PDF/A-1b, 2b, 3b), font embedding rules, and long-term digital preservation."
+  jsonLd={breadcrumbSchema}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class="space-y-4 pb-8 border-b border-[#ebebeb]">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fafafa] border border-[#ebebeb] text-xs font-mono text-[#4d4d4d]">
+        <span>ISO 19005 Reference</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-[#171717]">
+        Understanding the PDF/A Standard
+      </h1>
+      <p class="text-base sm:text-lg text-[#4d4d4d] leading-relaxed">
+        PDF/A is the global standard for long-term document preservation. Learn how it works, why standard PDFs fail, and which conformance level you need.
+      </p>
+    </header>
+
+    <div class="prose prose-neutral max-w-none space-y-8 text-sm text-[#4d4d4d] leading-relaxed">
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold text-[#171717] border-b border-[#ebebeb] pb-2">
+          1. The Core Purpose of ISO 19005
+        </h2>
+        <p>
+          Standard PDF files are designed for dynamic document exchange and immediate printing. They often rely on fonts installed on the host operating system, external hyperlink references, embedded JavaScript actions, or proprietary media codecs. Over time, as operating systems update and software dependencies shift, a standard PDF opened 10 years later may render with altered layouts, missing characters, or missing elements.
+        </p>
+        <p>
+          <strong class="text-[#171717]">PDF/A (ISO 19005)</strong> guarantees 100% self-containment. Everything required to render the document precisely—fonts, color space profiles, vector paths, and metadata—must be embedded directly inside the file binary.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-xl font-semibold text-[#171717] border-b border-[#ebebeb] pb-2">
+          2. Comparison of PDF/A Standards
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse border border-[#ebebeb]">
+            <thead>
+              <tr class="bg-[#fafafa] font-mono text-xs text-[#171717]">
+                <th class="border border-[#ebebeb] p-3">Standard</th>
+                <th class="border border-[#ebebeb] p-3">ISO Standard</th>
+                <th class="border border-[#ebebeb] p-3">Base PDF Version</th>
+                <th class="border border-[#ebebeb] p-3">Key Features</th>
+              </tr>
+            </thead>
+            <tbody class="text-xs">
+              <tr>
+                <td class="border border-[#ebebeb] p-3 font-semibold font-mono">PDF/A-1b</td>
+                <td class="border border-[#ebebeb] p-3 font-mono">ISO 19005-1:2005</td>
+                <td class="border border-[#ebebeb] p-3 font-mono">PDF 1.4</td>
+                <td class="border border-[#ebebeb] p-3">Basic visual preservation. No transparency or layers allowed.</td>
+              </tr>
+              <tr class="bg-[#fafafa]/50">
+                <td class="border border-[#ebebeb] p-3 font-semibold font-mono text-[#0070f3]">PDF/A-2b</td>
+                <td class="border border-[#ebebeb] p-3 font-mono">ISO 19005-2:2011</td>
+                <td class="border border-[#ebebeb] p-3 font-mono">PDF 1.7</td>
+                <td class="border border-[#ebebeb] p-3">Supports transparency, layers, JPEG2000, and embedded PDF/A files. Recommended for general business.</td>
+              </tr>
+              <tr>
+                <td class="border border-[#ebebeb] p-3 font-semibold font-mono">PDF/A-3b</td>
+                <td class="border border-[#ebebeb] p-3 font-mono">ISO 19005-3:2012</td>
+                <td class="border border-[#ebebeb] p-3 font-mono">PDF 1.7</td>
+                <td class="border border-[#ebebeb] p-3">Allows embedding non-PDF file attachments (e.g. XML spreadsheets, ZUGFeRD e-invoices).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold text-[#171717] border-b border-[#ebebeb] pb-2">
+          3. Prohibited Elements in PDF/A
+        </h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Unembedded Fonts:</strong> All fonts must be 100% embedded with ToUnicode character mapping tables.</li>
+          <li><strong>Device-Dependent Colors:</strong> Raw RGB/CMYK values must specify an embedded sRGB or ICC OutputIntent profile.</li>
+          <li><strong>Dynamic Code:</strong> JavaScript actions and interactive button scripts are barred to avoid operational failures and security risks.</li>
+          <li><strong>Audio & Video:</strong> Embedded MP3, MP4, or Flash content is prohibited due to codec obsolescence.</li>
+          <li><strong>Password Protection:</strong> Encryption is barred so future archivists are never locked out of public records.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- CTA Box -->
+    <div class="p-8 rounded-2xl bg-[#fafafa] border border-[#ebebeb] text-center space-y-4">
+      <h3 class="text-xl font-semibold text-[#171717]">Ready to convert your PDF files?</h3>
+      <p class="text-xs text-[#4d4d4d] max-w-md mx-auto">
+        Convert your PDF into a fully validated ISO 19005 compliant PDF/A document in seconds.
+      </p>
+      <a href="/#upload-zone" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#171717] text-white text-xs font-semibold hover:bg-[#333333] transition-colors shadow-xs">
+        Start Free Conversion
+      </a>
+    </div>
+  </div>
+</BaseLayout>

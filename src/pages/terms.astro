@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { generateBreadcrumbSchema } from '../utils/seo';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Terms of Service', url: '/terms' },
+];
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+---
+
+<BaseLayout
+  title="Terms of Service — PDFAfy"
+  description="PDFAfy Terms of Service: Guidelines and conditions for using our online PDF to ISO PDF/A conversion service."
+  jsonLd={breadcrumbSchema}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class="space-y-3 pb-6 border-b border-[#ebebeb]">
+      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#171717]">
+        Terms of Service
+      </h1>
+      <p class="text-xs font-mono text-[#888888]">Last Updated: August 2026</p>
+    </header>
+
+    <div class="space-y-6 text-sm text-[#4d4d4d] leading-relaxed">
+      <section class="space-y-2">
+        <h2 class="text-lg font-semibold text-[#171717]">1. Acceptance of Terms</h2>
+        <p>
+          By accessing and using PDFAfy (pdfafy.com), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you may not use our web conversion services.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-semibold text-[#171717]">2. Service Description</h2>
+        <p>
+          PDFAfy provides free online conversion utilities that transform standard PDF files into ISO 19005 compliant PDF/A documents (PDF/A-1b, PDF/A-2b, PDF/A-3b). Processing is provided "as is" and "as available".
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-semibold text-[#171717]">3. User Responsibilities & Fair Use</h2>
+        <p>
+          You warrant that you have the legal right to upload and process any documents submitted to PDFAfy. You agree not to attempt to reverse engineer, disrupt, or exploit the client-side conversion engine or web infrastructure.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-semibold text-[#171717]">4. Limitation of Liability</h2>
+        <p>
+          While PDFAfy adheres strictly to ISO 19005 standards, PDFAfy and its operators shall not be held liable for any damages, document loss, or business interruption arising from the use of converted files. Users are advised to retain backup copies of original documents.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

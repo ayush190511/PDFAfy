@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { generateBreadcrumbSchema } from '../../utils/seo';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+];
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+---
+
+<BaseLayout
+  title="PDF/A Archival Blog & Guides — PDFAfy"
+  description="Technical insights, ISO 19005 standards breakdowns, government archival requirements, and PDF best practices."
+  jsonLd={breadcrumbSchema}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class="space-y-4 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fafafa] border border-[#ebebeb] text-xs font-mono text-[#4d4d4d]">
+        <span>ISO 19005 Knowledge Base</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-[#171717]">
+        Technical Blog & Archival Guides
+      </h1>
+      <p class="text-sm sm:text-base text-[#4d4d4d] leading-relaxed">
+        Deep technical articles on PDF/A conversion mechanics, legal compliance mandates, character mapping, and digital preservation.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map((post) => (
+        <BlogCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug}
+          pubDate={post.data.pubDate}
+          readTime={post.data.readTime}
+          tags={post.data.tags}
+          featured={post.data.featured}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

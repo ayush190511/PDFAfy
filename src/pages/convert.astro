@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { UploadZone } from '../components/UploadZone';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { generateBreadcrumbSchema } from '../utils/seo';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Convert Studio', url: '/convert' },
+];
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+---
+
+<BaseLayout
+  title="PDF to PDF/A Converter Studio — PDFAfy"
+  description="Convert your PDF into ISO-compliant PDF/A-1b, PDF/A-2b, or PDF/A-3b files with client-side privacy."
+  jsonLd={breadcrumbSchema}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="text-center space-y-3 max-w-2xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#171717]">
+        PDF/A Conversion Studio
+      </h1>
+      <p class="text-sm text-[#4d4d4d]">
+        Select your target ISO standard, drag and drop your file, and download your verified PDF/A document.
+      </p>
+    </div>
+
+    <UploadZone client:load />
+  </div>
+</BaseLayout>

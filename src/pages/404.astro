@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 - Page Not Found | PDFAfy" description="The page you are looking for does not exist on PDFAfy.">
+  <div class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 py-16 space-y-6">
+    <div class="w-16 h-16 rounded-2xl bg-[#fafafa] border border-[#ebebeb] flex items-center justify-center font-mono text-2xl font-bold text-[#171717]">
+      404
+    </div>
+    
+    <div class="space-y-2 max-w-md">
+      <h1 class="text-2xl font-semibold tracking-tight text-[#171717]">Page Not Found</h1>
+      <p class="text-xs text-[#4d4d4d]">
+        The page or resource you are looking for has been moved or does not exist.
+      </p>
+    </div>
+
+    <a
+      href="/"
+      class="px-6 py-2.5 rounded-full bg-[#171717] text-white text-xs font-semibold hover:bg-[#333333] transition-colors shadow-xs"
+    >
+      Return to Converter
+    </a>
+  </div>
+</BaseLayout>

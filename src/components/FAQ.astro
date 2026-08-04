@@ -1,0 +1,66 @@
+---
+import { generateFAQSchema } from '../utils/seo';
+
+const faqs = [
+  {
+    question: 'What is a PDF/A file?',
+    answer: 'PDF/A is an ISO-standardized version of the Portable Document Format (PDF) specifically designed for long-term digital archiving. It embeds all fonts, color profiles, and metadata into the file while prohibiting dynamic content like JavaScript, encryption, or external link dependencies.',
+  },
+  {
+    question: 'Which PDF/A standard should I choose (PDF/A-1b, PDF/A-2b, or PDF/A-3b)?',
+    answer: 'For standard business documents, PDF/A-2b is recommended as it supports transparency and layers while guaranteeing visual consistency. Use PDF/A-1b if complying with legacy mandates, or PDF/A-3b if you need to embed XML attachments for electronic invoicing (e.g. ZUGFeRD / Factur-X).',
+  },
+  {
+    question: 'Are my uploaded PDF files secure and private?',
+    answer: 'Yes. PDFAfy uses a privacy-first, client-side browser architecture. Your PDF files are processed directly inside your local web browser session and are never uploaded or saved to external cloud servers.',
+  },
+  {
+    question: 'Is PDFAfy free to use?',
+    answer: 'Yes! PDFAfy is 100% free with no hidden subscriptions, paywalls, or daily upload limits.',
+  },
+  {
+    question: 'Can I convert large PDF files?',
+    answer: 'Absolutely. PDFAfy supports large PDF files up to 150MB with high-performance memory stream processing.',
+  },
+  {
+    question: 'How do I know if my converted file is truly PDF/A compliant?',
+    answer: 'PDFAfy automatically injects ISO-compliant XMP metadata (pdfaid:part and pdfaid:conformance) and sRGB OutputIntent dictionaries into the document catalog. You can verify compliance in Adobe Acrobat Pro or any ISO 19005 validator.',
+  },
+];
+
+const faqSchema = generateFAQSchema(faqs);
+---
+
+<section class="py-16 sm:py-24 bg-white border-b border-[#ebebeb]">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center space-y-3">
+      <h2 class="text-xs font-mono font-medium uppercase tracking-wider text-[#888888]">
+        Got Questions?
+      </h2>
+      <p class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#171717]">
+        Frequently Asked Questions
+      </p>
+      <p class="text-sm text-[#4d4d4d]">
+        Everything you need to know about PDF/A standards and conversion.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group rounded-2xl bg-[#fafafa] border border-[#ebebeb] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all hover:border-[#a1a1a1]">
+          <summary class="flex items-center justify-between font-semibold text-base text-[#171717] gap-4">
+            <span>{faq.question}</span>
+            <span class="w-6 h-6 rounded-full bg-white border border-[#ebebeb] flex items-center justify-center font-mono text-xs text-[#888888] shrink-0 group-open:rotate-180 transition-transform">
+              ↓
+            </span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed pt-2 border-t border-[#ebebeb]">
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

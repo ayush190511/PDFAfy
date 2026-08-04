@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { generateBreadcrumbSchema } from '../utils/seo';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'FAQ', url: '/faq' },
+];
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+---
+
+<BaseLayout
+  title="Frequently Asked Questions — PDFAfy"
+  description="Answers to common questions about PDF to PDF/A conversion, ISO 19005 standards, file security, and privacy."
+  jsonLd={breadcrumbSchema}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8">
+    <Breadcrumbs items={breadcrumbs} />
+    <FAQ />
+  </div>
+</BaseLayout>

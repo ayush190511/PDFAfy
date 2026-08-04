@@ -1,11 +1,77 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureCards from '../components/FeatureCards.astro';
+import SecuritySection from '../components/SecuritySection.astro';
+import FAQ from '../components/FAQ.astro';
+import { generateSoftwareApplicationSchema } from '../utils/seo';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const appSchema = generateSoftwareApplicationSchema();
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="PDFAfy — Convert PDF to ISO Compliant PDF/A Online"
+  description="Convert your PDF into ISO-compliant PDF/A documents in seconds. Supports PDF/A-1b, PDF/A-2b, and PDF/A-3b. Secure, fast, client-side, and free."
+  jsonLd={appSchema}
+>
+  <!-- Hero Section with Upload Area above the fold -->
+  <Hero />
+
+  <!-- Simple Explanation of PDF/A & Why It Matters -->
+  <section class="py-16 sm:py-20 bg-white border-b border-[#ebebeb]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fafafa] border border-[#ebebeb] text-xs font-mono text-[#4d4d4d]">
+            <span>ISO 19005 Overview</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#171717]">
+            What is PDF/A and Why Does It Matter?
+          </h2>
+          <p class="text-sm text-[#4d4d4d] leading-relaxed">
+            Standard PDF files are created for immediate display and printing. However, they often rely on external fonts, system colors, or dynamic code that breaks over time as software evolves.
+          </p>
+          <p class="text-sm text-[#4d4d4d] leading-relaxed">
+            <strong class="text-[#171717]">PDF/A</strong> is the specialized ISO standard for long-term digital preservation. It mandates 100% font embedding, device-independent sRGB color spaces, and strict self-containment so your records remain readable in 20, 50, or 100 years.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#fafafa] border border-[#ebebeb] space-y-4 font-mono text-xs text-[#4d4d4d]">
+          <div class="flex justify-between pb-3 border-b border-[#ebebeb]">
+            <span class="text-[#888888]">Feature</span>
+            <span class="text-[#171717] font-semibold">PDF/A Requirement</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Font Embedding:</span>
+            <span class="text-emerald-700 font-semibold">100% Mandatory</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Color Profile:</span>
+            <span class="text-emerald-700 font-semibold">sRGB OutputIntent</span>
+          </div>
+          <div class="flex justify-between">
+            <span>JavaScript & Executables:</span>
+            <span class="text-red-600 font-semibold">Strictly Prohibited</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Encryption & Passwords:</span>
+            <span class="text-red-600 font-semibold">Prohibited</span>
+          </div>
+          <div class="flex justify-between">
+            <span>XMP Metadata Packet:</span>
+            <span class="text-emerald-700 font-semibold">ISO Validated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Cards -->
+  <FeatureCards />
+
+  <!-- Security & Privacy Section -->
+  <SecuritySection />
+
+  <!-- FAQ Accordion -->
+  <FAQ />
+</BaseLayout>

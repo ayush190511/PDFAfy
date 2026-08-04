@@ -1,0 +1,7 @@
+# http://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host & Sitemap
+Host: https://pdfafy.com
+Sitemap: https://pdfafy.com/sitemap-index.xml

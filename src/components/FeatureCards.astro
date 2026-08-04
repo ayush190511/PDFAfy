@@ -1,0 +1,77 @@
+---
+const features = [
+  {
+    title: 'ISO 19005 Compliance',
+    description: 'Generates standardized PDF/A-1b, PDF/A-2b, and PDF/A-3b files compliant with international digital preservation standards.',
+    code: 'ISO 19005-1/2/3',
+    icon: '📜',
+  },
+  {
+    title: '100% Font Embedding',
+    description: 'Embeds complete font glyph definitions and Unicode mapping tables (ToUnicode) so text never distorts or reflows.',
+    code: 'ToUnicode CMap',
+    icon: '🔤',
+  },
+  {
+    title: 'Device-Independent Colors',
+    description: 'Appends sRGB IEC61966-2.1 OutputIntent dictionaries to ensure colors remain consistent on any future display.',
+    code: 'sRGB OutputIntent',
+    icon: '🎨',
+  },
+  {
+    title: 'Instant Compliance Verification',
+    description: 'Performs automated syntax check and XMP metadata packet inspection immediately after conversion is completed.',
+    code: 'XMP Inspection',
+    icon: '⚡',
+  },
+  {
+    title: 'Client-Side Privacy',
+    description: 'Your files are processed directly inside your browser session. No document data is ever saved to disk or cloud servers.',
+    code: 'Zero Cloud Footprint',
+    icon: '🔒',
+  },
+  {
+    title: 'Large File Support',
+    description: 'Optimized memory handling easily converts large PDF documents up to 150MB without browser slowdown.',
+    code: 'Up to 150MB',
+    icon: '📁',
+  },
+];
+---
+
+<section class="py-16 sm:py-24 bg-[#fafafa] border-b border-[#ebebeb]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <h2 class="text-xs font-mono font-medium uppercase tracking-wider text-[#888888]">
+        Built For Long-Term Preservation
+      </h2>
+      <p class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#171717]">
+        Why PDFAfy is the Best PDF → PDF/A Converter
+      </p>
+      <p class="text-sm text-[#4d4d4d]">
+        Designed to meet the exact standards required by courts, governments, and enterprise archives.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((item) => (
+        <div class="p-6 rounded-2xl bg-white border border-[#ebebeb] space-y-4 hover:border-[#a1a1a1] transition-all hover:shadow-xs group">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">{item.icon}</span>
+            <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-[#fafafa] border border-[#ebebeb] text-[#888888]">
+              {item.code}
+            </span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-base text-[#171717] mb-1 group-hover:text-[#0070f3] transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-xs text-[#4d4d4d] leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
