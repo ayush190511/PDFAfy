@@ -1,4 +1,6 @@
 ---
+import { ThemeToggle } from './ThemeToggle';
+
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -9,14 +11,14 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-[#ebebeb] bg-white/80 backdrop-blur-md transition-all">
+<header class="sticky top-0 z-50 w-full border-b border-[#ebebeb] dark:border-[#262626] bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md transition-all">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <!-- Brand Logo -->
     <a href="/" class="flex items-center gap-2.5 group">
       <img src="/favicon.svg" alt="PDFAfy Logo" class="w-8 h-8 rounded-lg shadow-sm group-hover:scale-105 transition-transform" />
       <div class="flex items-baseline gap-1">
-        <span class="font-semibold text-base tracking-tight text-[#171717]">PDFAfy</span>
-        <span class="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-[#fafafa] border border-[#ebebeb] text-[#888888]">ISO 19005</span>
+        <span class="font-semibold text-base tracking-tight text-[#171717] dark:text-[#f5f5f5]">PDFAfy</span>
+        <span class="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-[#fafafa] dark:bg-[#1f1f1f] border border-[#ebebeb] dark:border-[#333333] text-[#888888] dark:text-[#a3a3a3]">ISO 19005</span>
       </div>
     </a>
 
@@ -29,8 +31,8 @@ const navLinks = [
             href={link.href}
             class={`px-3 py-1.5 text-sm font-medium rounded-full transition-colors ${
               isActive
-                ? 'text-[#171717] bg-[#f5f5f5]'
-                : 'text-[#4d4d4d] hover:text-[#171717] hover:bg-[#fafafa]'
+                ? 'text-[#171717] dark:text-[#f5f5f5] bg-[#f5f5f5] dark:bg-[#1f1f1f]'
+                : 'text-[#4d4d4d] dark:text-[#a3a3a3] hover:text-[#171717] dark:hover:text-[#f5f5f5] hover:bg-[#fafafa] dark:hover:bg-[#171717]'
             }`}
           >
             {link.name}
@@ -41,14 +43,17 @@ const navLinks = [
 
     <!-- Header Actions -->
     <div class="flex items-center gap-3">
-      <div class="hidden sm:flex items-center gap-1.5 text-xs text-[#4d4d4d] bg-[#fafafa] border border-[#ebebeb] px-2.5 py-1 rounded-full font-mono">
+      <div class="hidden sm:flex items-center gap-1.5 text-xs text-[#4d4d4d] dark:text-[#a3a3a3] bg-[#fafafa] dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] px-2.5 py-1 rounded-full font-mono">
         <span class="w-2 h-2 rounded-full bg-[#50e3c2] animate-pulse"></span>
         <span>100% Client-Side Private</span>
       </div>
-      
+
+      <!-- Night Mode Toggle -->
+      <ThemeToggle client:load />
+
       <a
         href="/"
-        class="inline-flex items-center justify-center text-xs font-medium px-4 py-2 rounded-full bg-[#171717] text-white hover:bg-[#333333] transition-colors shadow-xs"
+        class="inline-flex items-center justify-center text-xs font-medium px-4 py-2 rounded-full bg-[#171717] dark:bg-[#f5f5f5] text-white dark:text-[#0a0a0a] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] transition-colors shadow-xs"
       >
         Convert PDF
       </a>

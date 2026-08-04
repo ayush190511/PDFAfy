@@ -17,6 +17,19 @@
     --accent-violet: #7928ca;
   }
 
+  .dark {
+    --canvas: #0a0a0a;
+    --canvas-soft: #121212;
+    --canvas-soft-2: #171717;
+    --ink: #f5f5f5;
+    --body-color: #a3a3a3;
+    --mute: #737373;
+    --hairline: #262626;
+    --hairline-strong: #404040;
+    --primary: #ffffff;
+    --on-primary: #0a0a0a;
+  }
+
   body {
     background-color: var(--canvas);
     color: var(--ink);
@@ -24,11 +37,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   ::selection {
-    background-color: #171717;
-    color: #f2f2f2;
+    background-color: #0070f3;
+    color: #ffffff;
   }
 }
 
@@ -62,6 +76,11 @@
   animation: shimmmer 2s infinite;
 }
 
+.dark .shimmer-bg {
+  background: linear-gradient(90deg, #171717 25%, #262626 50%, #171717 75%);
+  background-size: 200% 100%;
+}
+
 /* Custom Glass & Mesh Gradient Overlay */
 .mesh-gradient-bg {
   background-image: 
@@ -70,9 +89,21 @@
     radial-gradient(at 50% 80%, rgba(121, 40, 202, 0.05) 0px, transparent 50%);
 }
 
+.dark .mesh-gradient-bg {
+  background-image: 
+    radial-gradient(at 20% 20%, rgba(80, 227, 194, 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(0, 112, 243, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(121, 40, 202, 0.12) 0px, transparent 50%);
+}
+
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--hairline);
+}
+
+.dark .glass-panel {
+  background: rgba(10, 10, 10, 0.85);
+  border-color: #262626;
 }
