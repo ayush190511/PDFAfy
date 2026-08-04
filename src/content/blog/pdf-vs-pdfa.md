@@ -12,18 +12,37 @@ While standard PDFs and PDF/A files both carry the `.pdf` file extension, their 
 
 ---
 
-## Comparison Summary Table
+## Technical Comparison Overview
 
-| Technical Attribute | Standard PDF | PDF/A (ISO 19005) |
-| :--- | :--- | :--- |
-| **Primary Goal** | Rich interactive document exchange | Guaranteed long-term visual preservation |
-| **Font Embedding** | Optional (Can reference local OS fonts) | **Mandatory** (100% Embedded with Unicode) |
-| **Color Spaces** | Device-dependent RGB/CMYK allowed | **Mandatory ICC Profiles** (sRGB / OutputIntents) |
-| **Javascript & Actions** | Supported (Dynamic forms, buttons) | **Strictly Prohibited** |
-| **Audio / Video** | Supported (Flash, MP4, MP3) | **Prohibited** |
-| **Encryption / Passwords**| Supported | **Prohibited** |
-| **External References** | Allowed (Remote URLs, external PDFs) | **Prohibited** (100% Self-contained) |
-| **Metadata** | Basic PDF Information dictionary | **Structured ISO XMP Metadata Packet** |
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 not-prose">
+  <div class="p-5 rounded-2xl bg-[#fafafa] dark:bg-[#121212] border border-[#ebebeb] dark:border-[#262626] space-y-3">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+      <h4 class="font-semibold text-base text-[#171717] dark:text-[#f5f5f5]">Standard PDF</h4>
+    </div>
+    <ul class="text-xs text-[#4d4d4d] dark:text-[#a3a3a3] space-y-2">
+      <li>• <strong>Primary Goal</strong>: Rich interactive document exchange</li>
+      <li>• <strong>Font Embedding</strong>: Optional (references local OS fonts)</li>
+      <li>• <strong>Colors</strong>: Uncalibrated RGB/CMYK allowed</li>
+      <li>• <strong>Scripts & Media</strong>: JavaScript & MP4 video supported</li>
+      <li>• <strong>Protection</strong>: Password encryption enabled</li>
+    </ul>
+  </div>
+
+  <div class="p-5 rounded-2xl bg-[#fafafa] dark:bg-[#121212] border border-[#0070f3]/40 dark:border-[#0070f3]/50 ring-1 ring-[#0070f3]/20 space-y-3">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-[#0070f3]"></span>
+      <h4 class="font-semibold text-base text-[#171717] dark:text-[#f5f5f5]">ISO PDF/A Archival</h4>
+    </div>
+    <ul class="text-xs text-[#4d4d4d] dark:text-[#a3a3a3] space-y-2">
+      <li>• <strong>Primary Goal</strong>: 100% visual preservation over decades</li>
+      <li>• <strong>Font Embedding</strong>: 100% Mandatory with Unicode maps</li>
+      <li>• <strong>Colors</strong>: Mandatory sRGB / ICC OutputIntents</li>
+      <li>• <strong>Scripts & Media</strong>: Strictly Prohibited for security</li>
+      <li>• <strong>Metadata</strong>: Structured ISO XMP Packet</li>
+    </ul>
+  </div>
+</div>
 
 ---
 

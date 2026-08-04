@@ -29,7 +29,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
     
     <article class="mt-8">
       <!-- Article Header -->
-      <header class="mb-12 pb-10 border-b border-[#ebebeb] dark:border-[#262626]">
+      <header class="mb-14 pb-10 border-b border-[#ebebeb] dark:border-[#262626]">
         <div class="flex flex-wrap items-center gap-2 mb-6">
           {tags.map((tag) => (
             <span class="px-3 py-1 text-xs font-mono font-medium rounded-full bg-[#fafafa] dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] text-[#4d4d4d] dark:text-[#a3a3a3]">
@@ -60,19 +60,19 @@ const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
         </div>
       </header>
 
-      <!-- Markdown Article Content: Spacious, Uncongested Typography -->
+      <!-- Markdown Article Content: Highly Distinct Headings & Spacious Typography -->
       <div class="prose prose-lg dark:prose-invert max-w-none 
-        prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[#171717] dark:prose-headings:text-[#f5f5f5]
-        prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-14 prose-h2:mb-6 prose-h2:border-b prose-h2:border-[#ebebeb] dark:prose-h2:border-[#262626] prose-h2:pb-3
-        prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
-        prose-p:text-base sm:prose-p:text-lg prose-p:text-[#333333] dark:prose-p:text-[#d4d4d4] prose-p:leading-[1.85] prose-p:mb-8
-        prose-ul:my-8 prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-3 prose-li:text-base sm:prose-li:text-lg prose-li:text-[#333333] dark:prose-li:text-[#d4d4d4] prose-li:leading-[1.75]
-        prose-ol:my-8 prose-ol:list-decimal prose-ol:pl-6 prose-ol:space-y-3 prose-ol:text-[#333333] dark:prose-ol:text-[#d4d4d4]
-        prose-blockquote:my-8 prose-blockquote:border-l-4 prose-blockquote:border-[#171717] dark:prose-blockquote:border-[#0070f3] prose-blockquote:bg-[#fafafa] dark:prose-blockquote:bg-[#121212] prose-blockquote:p-6 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-blockquote:text-[#171717] dark:prose-blockquote:text-[#f5f5f5]
+        prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-[#000000] dark:prose-headings:text-[#ffffff]
+        prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:pt-4 prose-h2:border-t prose-h2:border-[#ebebeb] dark:prose-h2:border-[#262626] prose-h2:font-extrabold prose-h2:text-[#0a0a0a] dark:prose-h2:text-[#ffffff]
+        prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:font-bold prose-h3:text-[#171717] dark:prose-h3:text-[#f5f5f5]
+        prose-p:text-base sm:prose-p:text-lg prose-p:text-[#4b5563] dark:prose-p:text-[#a3a3a3] prose-p:leading-[1.85] prose-p:mb-8 prose-p:font-normal
+        prose-ul:my-8 prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-3 prose-li:text-base sm:prose-li:text-lg prose-li:text-[#4b5563] dark:prose-li:text-[#a3a3a3] prose-li:leading-[1.75]
+        prose-ol:my-8 prose-ol:list-decimal prose-ol:pl-6 prose-ol:space-y-3 prose-ol:text-[#4b5563] dark:prose-ol:text-[#a3a3a3]
+        prose-blockquote:my-8 prose-blockquote:border-l-4 prose-blockquote:border-[#0070f3] prose-blockquote:bg-[#fafafa] dark:prose-blockquote:bg-[#121212] prose-blockquote:p-6 prose-blockquote:rounded-r-2xl prose-blockquote:not-italic prose-blockquote:text-[#171717] dark:prose-blockquote:text-[#f5f5f5] prose-blockquote:font-medium
         prose-table:w-full prose-table:my-10 prose-table:border-collapse prose-table:rounded-xl prose-table:overflow-hidden
         prose-th:border prose-th:border-[#ebebeb] dark:prose-th:border-[#262626] prose-th:bg-[#fafafa] dark:prose-th:bg-[#171717] prose-th:p-4 prose-th:text-left prose-th:font-semibold prose-th:text-[#171717] dark:prose-th:text-[#f5f5f5] prose-th:text-xs prose-th:font-mono prose-th:uppercase
         prose-td:border prose-td:border-[#ebebeb] dark:prose-td:border-[#262626] prose-td:p-4 prose-td:text-sm prose-td:text-[#4d4d4d] dark:prose-td:text-[#a3a3a3]
-        prose-strong:text-[#171717] dark:prose-strong:text-[#f5f5f5] prose-strong:font-semibold
+        prose-strong:text-[#171717] dark:prose-strong:text-[#ffffff] prose-strong:font-bold
         prose-hr:my-12 prose-hr:border-[#ebebeb] dark:prose-hr:border-[#262626]
         prose-code:font-mono prose-code:text-xs sm:prose-code:text-sm prose-code:bg-[#fafafa] dark:prose-code:bg-[#171717] prose-code:px-2 prose-code:py-1 prose-code:rounded-md prose-code:border prose-code:border-[#ebebeb] dark:prose-code:border-[#262626]">
         <slot />
