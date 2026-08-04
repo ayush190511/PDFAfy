@@ -6,6 +6,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pdfafy.com',
+  devToolbar: {
+    enabled: false
+  },
   integrations: [
     react(),
     sitemap()
