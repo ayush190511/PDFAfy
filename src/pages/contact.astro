@@ -19,44 +19,44 @@ const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8">
     <Breadcrumbs items={breadcrumbs} />
 
-    <header class="space-y-3 pb-6 border-b border-[#ebebeb] text-center max-w-xl mx-auto">
-      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#171717]">
+    <header class="space-y-3 pb-6 border-b border-[#ebebeb] dark:border-[#262626] text-center max-w-xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#171717] dark:text-[#f5f5f5]">
         Contact PDFAfy Engineering
       </h1>
-      <p class="text-sm text-[#4d4d4d]">
+      <p class="text-sm text-[#4d4d4d] dark:text-[#a3a3a3]">
         Have questions about ISO PDF/A compliance, enterprise integration, or feature requests? Send us a message below.
       </p>
     </header>
 
-    <div class="max-w-lg mx-auto p-8 rounded-2xl bg-[#fafafa] border border-[#ebebeb] space-y-6">
+    <div class="max-w-lg mx-auto p-8 rounded-2xl bg-[#fafafa] dark:bg-[#121212] border border-[#ebebeb] dark:border-[#262626] space-y-6">
       <form class="space-y-4" action="javascript:void(0);">
         <div class="space-y-1">
-          <label for="name" class="text-xs font-mono font-medium text-[#4d4d4d]">Full Name</label>
+          <label for="name" class="text-xs font-mono font-medium text-[#4d4d4d] dark:text-[#a3a3a3]">Full Name</label>
           <input
             type="text"
             id="name"
             placeholder="Jane Doe"
             required
-            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] bg-white text-[#171717] focus:outline-none focus:border-[#171717]"
+            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#171717] text-[#171717] dark:text-[#f5f5f5] focus:outline-none focus:border-[#171717] dark:focus:border-[#f5f5f5]"
           />
         </div>
 
         <div class="space-y-1">
-          <label for="email" class="text-xs font-mono font-medium text-[#4d4d4d]">Work Email</label>
+          <label for="email" class="text-xs font-mono font-medium text-[#4d4d4d] dark:text-[#a3a3a3]">Work Email</label>
           <input
             type="email"
             id="email"
             placeholder="jane@company.com"
             required
-            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] bg-white text-[#171717] focus:outline-none focus:border-[#171717]"
+            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#171717] text-[#171717] dark:text-[#f5f5f5] focus:outline-none focus:border-[#171717] dark:focus:border-[#f5f5f5]"
           />
         </div>
 
         <div class="space-y-1">
-          <label for="subject" class="text-xs font-mono font-medium text-[#4d4d4d]">Subject</label>
+          <label for="subject" class="text-xs font-mono font-medium text-[#4d4d4d] dark:text-[#a3a3a3]">Subject</label>
           <select
             id="subject"
-            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] bg-white text-[#171717] focus:outline-none focus:border-[#171717]"
+            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#171717] text-[#171717] dark:text-[#f5f5f5] focus:outline-none focus:border-[#171717] dark:focus:border-[#f5f5f5]"
           >
             <option>General Inquiry</option>
             <option>ISO 19005 Compliance Feedback</option>
@@ -66,26 +66,26 @@ const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
         </div>
 
         <div class="space-y-1">
-          <label for="message" class="text-xs font-mono font-medium text-[#4d4d4d]">Message</label>
+          <label for="message" class="text-xs font-mono font-medium text-[#4d4d4d] dark:text-[#a3a3a3]">Message</label>
           <textarea
             id="message"
             rows="4"
             placeholder="How can we assist you with PDF/A conversion?"
             required
-            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] bg-white text-[#171717] focus:outline-none focus:border-[#171717]"
+            class="w-full px-3 py-2 text-xs rounded-lg border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#171717] text-[#171717] dark:text-[#f5f5f5] focus:outline-none focus:border-[#171717] dark:focus:border-[#f5f5f5]"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          class="w-full py-2.5 rounded-full bg-[#171717] text-white text-xs font-semibold hover:bg-[#333333] transition-colors cursor-pointer shadow-xs"
+          class="w-full py-2.5 rounded-full bg-[#171717] dark:bg-[#f5f5f5] text-white dark:text-[#0a0a0a] text-xs font-semibold hover:bg-[#333333] dark:hover:bg-[#e5e5e5] transition-colors cursor-pointer shadow-xs"
         >
           Send Message
         </button>
       </form>
 
-      <div class="pt-4 border-t border-[#ebebeb] text-center text-xs text-[#888888] font-mono">
-        Direct Email: <a href="mailto:support@pdfafy.com" class="text-[#171717] underline">support@pdfafy.com</a>
+      <div class="pt-4 border-t border-[#ebebeb] dark:border-[#262626] text-center text-xs text-[#888888] dark:text-[#a3a3a3] font-mono">
+        Direct Email: <a href="mailto:support@pdfafy.com" class="text-[#171717] dark:text-[#f5f5f5] underline">support@pdfafy.com</a>
       </div>
     </div>
   </div>

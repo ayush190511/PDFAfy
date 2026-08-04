@@ -16,34 +16,34 @@ const { title, description, slug, pubDate, readTime, tags, featured = false } = 
   href={`/blog/${slug}`}
   class={`group rounded-2xl border p-6 transition-all duration-200 flex flex-col justify-between hover:shadow-xs cursor-pointer ${
     featured
-      ? 'bg-[#fafafa] border-[#171717]/20 hover:border-[#171717]'
-      : 'bg-white border-[#ebebeb] hover:border-[#a1a1a1]'
+      ? 'bg-[#fafafa] dark:bg-[#171717] border-[#171717]/20 dark:border-[#f5f5f5]/20 hover:border-[#171717] dark:hover:border-[#f5f5f5]'
+      : 'bg-white dark:bg-[#121212] border-[#ebebeb] dark:border-[#262626] hover:border-[#a1a1a1] dark:hover:border-[#404040]'
   }`}
 >
   <div class="space-y-3">
     <div class="flex flex-wrap items-center gap-2">
       {featured && (
-        <span class="px-2 py-0.5 text-[10px] font-mono font-semibold rounded bg-[#171717] text-white">
+        <span class="px-2 py-0.5 text-[10px] font-mono font-semibold rounded bg-[#171717] dark:bg-[#f5f5f5] text-white dark:text-[#0a0a0a]">
           Featured
         </span>
       )}
       {tags.map((tag) => (
-        <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-[#fafafa] border border-[#ebebeb] text-[#888888]">
+        <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#888888] dark:text-[#a3a3a3]">
           {tag}
         </span>
       ))}
     </div>
 
-    <h3 class="font-semibold text-lg text-[#171717] group-hover:text-[#0070f3] transition-colors leading-snug">
+    <h3 class="font-semibold text-lg text-[#171717] dark:text-[#f5f5f5] group-hover:text-[#0070f3] transition-colors leading-snug">
       {title}
     </h3>
 
-    <p class="text-xs text-[#4d4d4d] leading-relaxed line-clamp-3">
+    <p class="text-xs text-[#4d4d4d] dark:text-[#a3a3a3] leading-relaxed line-clamp-3">
       {description}
     </p>
   </div>
 
-  <div class="mt-6 pt-4 border-t border-[#ebebeb] flex items-center justify-between text-xs text-[#888888] font-mono">
+  <div class="mt-6 pt-4 border-t border-[#ebebeb] dark:border-[#262626] flex items-center justify-between text-xs text-[#888888] dark:text-[#a3a3a3] font-mono">
     <span>{pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
     <span>{readTime}</span>
   </div>
