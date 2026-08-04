@@ -2,14 +2,14 @@
 import { UploadZone } from './UploadZone';
 ---
 
-<section class="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24 border-b border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#0a0a0a] transition-colors">
+<section class="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-32 border-b border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#0a0a0a] transition-colors">
   <!-- Mesh Gradient Background Glow -->
   <div class="absolute inset-0 mesh-gradient-bg pointer-events-none opacity-60 dark:opacity-80"></div>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
     <!-- Hero Header Text -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fafafa] dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] text-xs font-mono text-[#4d4d4d] dark:text-[#a3a3a3]">
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fafafa] dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] text-xs font-mono text-[#4d4d4d] dark:text-[#a3a3a3]">
         <span class="w-2 h-2 rounded-full bg-[#0070f3]"></span>
         <span>ISO 19005-1 / 19005-2 / 19005-3 Archival Engine</span>
       </div>
@@ -22,16 +22,16 @@ import { UploadZone } from './UploadZone';
         Convert your PDF into ISO-compliant PDF/A documents in seconds. Secure, fast, and free.
       </p>
 
-      <div class="flex items-center justify-center gap-3 pt-2">
+      <div class="flex items-center justify-center gap-4 pt-2">
         <a
           href="#upload-zone"
-          class="px-6 py-2.5 rounded-full bg-[#171717] dark:bg-[#f5f5f5] text-white dark:text-[#0a0a0a] text-xs sm:text-sm font-medium hover:bg-[#333333] dark:hover:bg-[#e5e5e5] transition-all shadow-xs"
+          class="px-7 py-3 rounded-full bg-[#171717] dark:bg-[#f5f5f5] text-white dark:text-[#0a0a0a] text-xs sm:text-sm font-medium hover:bg-[#333333] dark:hover:bg-[#e5e5e5] transition-all shadow-xs"
         >
           Upload PDF
         </a>
         <a
           href="/about-pdfa"
-          class="px-6 py-2.5 rounded-full bg-[#fafafa] dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#f5f5f5] text-xs sm:text-sm font-medium hover:bg-[#f5f5f5] dark:hover:bg-[#262626] transition-colors"
+          class="px-7 py-3 rounded-full bg-[#fafafa] dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#f5f5f5] text-xs sm:text-sm font-medium hover:bg-[#f5f5f5] dark:hover:bg-[#262626] transition-colors"
         >
           Learn about PDF/A
         </a>
@@ -39,6 +39,8 @@ import { UploadZone } from './UploadZone';
     </div>
 
     <!-- Above The Fold Converter Island -->
-    <UploadZone client:load />
+    <div class="pt-4">
+      <UploadZone client:load />
+    </div>
   </div>
 </section>

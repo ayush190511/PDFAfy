@@ -18,48 +18,48 @@ const appSchema = generateSoftwareApplicationSchema();
   <Hero />
 
   <!-- Simple Explanation of PDF/A & Why It Matters -->
-  <section class="py-16 sm:py-20 bg-white dark:bg-[#0a0a0a] border-b border-[#ebebeb] dark:border-[#262626] transition-colors">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="space-y-4">
+  <section class="py-20 sm:py-28 lg:py-32 bg-white dark:bg-[#0a0a0a] border-b border-[#ebebeb] dark:border-[#262626] transition-colors">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div class="space-y-5">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fafafa] dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] text-xs font-mono text-[#4d4d4d] dark:text-[#a3a3a3]">
             <span>ISO 19005 Overview</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#171717] dark:text-[#f5f5f5]">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#171717] dark:text-[#f5f5f5] leading-tight">
             What is PDF/A and Why Does It Matter?
           </h2>
-          <p class="text-sm text-[#4d4d4d] dark:text-[#a3a3a3] leading-relaxed">
+          <p class="text-base text-[#4d4d4d] dark:text-[#a3a3a3] leading-relaxed">
             Standard PDF files are created for immediate display and printing. However, they often rely on external fonts, system colors, or dynamic code that breaks over time as software evolves.
           </p>
-          <p class="text-sm text-[#4d4d4d] dark:text-[#a3a3a3] leading-relaxed">
+          <p class="text-base text-[#4d4d4d] dark:text-[#a3a3a3] leading-relaxed">
             <strong class="text-[#171717] dark:text-[#f5f5f5]">PDF/A</strong> is the specialized ISO standard for long-term digital preservation. It mandates 100% font embedding, device-independent sRGB color spaces, and strict self-containment so your records remain readable in 20, 50, or 100 years.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-[#fafafa] dark:bg-[#121212] border border-[#ebebeb] dark:border-[#262626] space-y-4 font-mono text-xs text-[#4d4d4d] dark:text-[#a3a3a3]">
-          <div class="flex justify-between pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
-            <span class="text-[#888888] dark:text-[#737373]">Feature</span>
-            <span class="text-[#171717] dark:text-[#f5f5f5] font-semibold">PDF/A Requirement</span>
+        <div class="p-8 rounded-3xl bg-[#fafafa] dark:bg-[#121212] border border-[#ebebeb] dark:border-[#262626] space-y-5 font-mono text-xs text-[#4d4d4d] dark:text-[#a3a3a3] shadow-xs">
+          <div class="flex justify-between pb-4 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[#888888] dark:text-[#737373] uppercase tracking-wider">Feature</span>
+            <span class="text-[#171717] dark:text-[#f5f5f5] font-semibold uppercase tracking-wider">PDF/A Requirement</span>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between items-center py-1">
             <span>Font Embedding:</span>
-            <span class="text-emerald-700 dark:text-emerald-400 font-semibold">100% Mandatory</span>
+            <span class="text-emerald-700 dark:text-emerald-400 font-semibold px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">100% Mandatory</span>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between items-center py-1">
             <span>Color Profile:</span>
-            <span class="text-emerald-700 dark:text-emerald-400 font-semibold">sRGB OutputIntent</span>
+            <span class="text-emerald-700 dark:text-emerald-400 font-semibold px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">sRGB OutputIntent</span>
           </div>
-          <div class="flex justify-between">
-            <span>JavaScript & Executables:</span>
-            <span class="text-red-600 dark:text-red-400 font-semibold">Strictly Prohibited</span>
+          <div class="flex justify-between items-center py-1">
+            <span>JavaScript & Code:</span>
+            <span class="text-red-600 dark:text-red-400 font-semibold px-2 py-0.5 rounded bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800">Strictly Prohibited</span>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between items-center py-1">
             <span>Encryption & Passwords:</span>
-            <span class="text-red-600 dark:text-red-400 font-semibold">Prohibited</span>
+            <span class="text-red-600 dark:text-red-400 font-semibold px-2 py-0.5 rounded bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800">Prohibited</span>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between items-center py-1">
             <span>XMP Metadata Packet:</span>
-            <span class="text-emerald-700 dark:text-emerald-400 font-semibold">ISO Validated</span>
+            <span class="text-emerald-700 dark:text-emerald-400 font-semibold px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">ISO Validated</span>
           </div>
         </div>
       </div>
