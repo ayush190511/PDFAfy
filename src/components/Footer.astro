@@ -2,19 +2,19 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-[#ebebeb] bg-[#fafafa] text-[#4d4d4d] text-sm py-12 sm:py-16">
+<footer class="border-t border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#0d0d0d] text-[#4d4d4d] dark:text-[#a3a3a3] text-sm py-12 sm:py-16 transition-colors">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 pb-12 border-b border-[#ebebeb]">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 pb-12 border-b border-[#ebebeb] dark:border-[#262626]">
       <!-- Brand column -->
       <div class="md:col-span-2 space-y-4">
         <div class="flex items-center gap-2">
           <img src="/favicon.svg" alt="PDFAfy Logo" class="w-7 h-7 rounded-lg shadow-sm" />
-          <span class="font-semibold text-base tracking-tight text-[#171717]">PDFAfy</span>
+          <span class="font-semibold text-base tracking-tight text-[#171717] dark:text-[#f5f5f5]">PDFAfy</span>
         </div>
-        <p class="text-xs text-[#888888] max-w-sm leading-relaxed">
+        <p class="text-xs text-[#888888] dark:text-[#a3a3a3] max-w-sm leading-relaxed">
           The minimalist, high-speed converter for turning PDF files into ISO 19005-compliant PDF/A documents (PDF/A-1b, PDF/A-2b, PDF/A-3b). Designed with a privacy-first, client-side browser architecture.
         </p>
-        <div class="flex items-center gap-2 text-xs font-mono text-[#888888]">
+        <div class="flex items-center gap-2 text-xs font-mono text-[#888888] dark:text-[#a3a3a3]">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           <span>Zero Server Storage Guarantee</span>
         </div>
@@ -22,41 +22,41 @@ const currentYear = new Date().getFullYear();
 
       <!-- Column 1: Converter Tools -->
       <div>
-        <h4 class="font-semibold text-xs text-[#171717] uppercase tracking-wider mb-4 font-mono">PDF/A Formats</h4>
+        <h4 class="font-semibold text-xs text-[#171717] dark:text-[#f5f5f5] uppercase tracking-wider mb-4 font-mono">PDF/A Formats</h4>
         <ul class="space-y-2.5 text-xs">
-          <li><a href="/" class="hover:text-[#171717] transition-colors">PDF/A-1b Converter</a></li>
-          <li><a href="/" class="hover:text-[#171717] transition-colors">PDF/A-2b Converter</a></li>
-          <li><a href="/" class="hover:text-[#171717] transition-colors">PDF/A-3b Converter</a></li>
-          <li><a href="/convert" class="hover:text-[#171717] transition-colors">Batch Upload Studio</a></li>
+          <li><a href="/" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">PDF/A-1b Converter</a></li>
+          <li><a href="/" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">PDF/A-2b Converter</a></li>
+          <li><a href="/" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">PDF/A-3b Converter</a></li>
+          <li><a href="/convert" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">Batch Upload Studio</a></li>
         </ul>
       </div>
 
       <!-- Column 2: Resources -->
       <div>
-        <h4 class="font-semibold text-xs text-[#171717] uppercase tracking-wider mb-4 font-mono">Resources</h4>
+        <h4 class="font-semibold text-xs text-[#171717] dark:text-[#f5f5f5] uppercase tracking-wider mb-4 font-mono">Resources</h4>
         <ul class="space-y-2.5 text-xs">
-          <li><a href="/about-pdfa" class="hover:text-[#171717] transition-colors">What is PDF/A?</a></li>
-          <li><a href="/blog/pdf-vs-pdfa" class="hover:text-[#171717] transition-colors">PDF vs PDF/A</a></li>
-          <li><a href="/blog/pdfa-1-vs-pdfa-2-vs-pdfa-3" class="hover:text-[#171717] transition-colors">PDF/A Standards Comparison</a></li>
-          <li><a href="/faq" class="hover:text-[#171717] transition-colors">Frequently Asked Questions</a></li>
-          <li><a href="/blog" class="hover:text-[#171717] transition-colors">Technical Blog</a></li>
+          <li><a href="/about-pdfa" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">What is PDF/A?</a></li>
+          <li><a href="/blog/pdf-vs-pdfa" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">PDF vs PDF/A</a></li>
+          <li><a href="/blog/pdfa-1-vs-pdfa-2-vs-pdfa-3" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">PDF/A Standards Comparison</a></li>
+          <li><a href="/faq" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">Frequently Asked Questions</a></li>
+          <li><a href="/blog" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">Technical Blog</a></li>
         </ul>
       </div>
 
       <!-- Column 3: Trust & Legal -->
       <div>
-        <h4 class="font-semibold text-xs text-[#171717] uppercase tracking-wider mb-4 font-mono">Legal & Security</h4>
+        <h4 class="font-semibold text-xs text-[#171717] dark:text-[#f5f5f5] uppercase tracking-wider mb-4 font-mono">Legal & Security</h4>
         <ul class="space-y-2.5 text-xs">
-          <li><a href="/privacy" class="hover:text-[#171717] transition-colors">Privacy Policy</a></li>
-          <li><a href="/terms" class="hover:text-[#171717] transition-colors">Terms of Service</a></li>
-          <li><a href="/contact" class="hover:text-[#171717] transition-colors">Contact Support</a></li>
-          <li><span class="text-[#888888] font-mono text-[11px]">ISO 19005 Compliant</span></li>
+          <li><a href="/privacy" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">Terms of Service</a></li>
+          <li><a href="/contact" class="hover:text-[#171717] dark:hover:text-[#f5f5f5] transition-colors">Contact Support</a></li>
+          <li><span class="text-[#888888] dark:text-[#a3a3a3] font-mono text-[11px]">ISO 19005 Compliant</span></li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom Bar -->
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#888888] gap-4">
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#888888] dark:text-[#a3a3a3] gap-4">
       <p>© {currentYear} PDFAfy (pdfafy.com). All rights reserved.</p>
       <p class="font-mono text-[11px]">Designed with minimalist precision for long-term document preservation.</p>
     </div>

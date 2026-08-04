@@ -36,11 +36,11 @@ export const StandardSelector: React.FC<StandardSelectorProps> = ({ selected, on
   return (
     <div className="w-full space-y-3">
       <div className="flex items-center justify-between">
-        <label className="text-xs font-mono font-medium uppercase tracking-wider text-[#4d4d4d] flex items-center gap-1.5">
+        <label className="text-xs font-mono font-medium uppercase tracking-wider text-[#4d4d4d] dark:text-[#a3a3a3] flex items-center gap-1.5">
           <span>Target ISO Standard</span>
-          <Info className="w-3.5 h-3.5 text-[#888888]" />
+          <Info className="w-3.5 h-3.5 text-[#888888] dark:text-[#737373]" />
         </label>
-        <span className="text-xs font-mono text-[#888888]">100% Validated</span>
+        <span className="text-xs font-mono text-[#888888] dark:text-[#737373]">100% Validated</span>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -54,21 +54,21 @@ export const StandardSelector: React.FC<StandardSelectorProps> = ({ selected, on
               onClick={() => onChange(std.id)}
               className={`text-left p-3.5 rounded-xl border transition-all text-xs relative flex flex-col justify-between cursor-pointer ${
                 isSelected
-                  ? 'border-[#171717] bg-[#fafafa] ring-1 ring-[#171717] shadow-xs'
-                  : 'border-[#ebebeb] bg-white hover:border-[#a1a1a1] hover:bg-[#fafafa]/50'
+                  ? 'border-[#171717] dark:border-[#f5f5f5] bg-[#fafafa] dark:bg-[#171717] ring-1 ring-[#171717] dark:ring-white shadow-xs'
+                  : 'border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#121212] hover:border-[#a1a1a1] dark:hover:border-[#404040] hover:bg-[#fafafa]/50 dark:hover:bg-[#171717]/50'
               } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <span className="font-semibold text-sm text-[#171717] font-mono">{std.name}</span>
+                  <span className="font-semibold text-sm text-[#171717] dark:text-[#f5f5f5] font-mono">{std.name}</span>
                   {isSelected && (
-                    <div className="w-4 h-4 rounded-full bg-[#171717] text-white flex items-center justify-center">
+                    <div className="w-4 h-4 rounded-full bg-[#171717] dark:bg-[#f5f5f5] text-white dark:text-[#0a0a0a] flex items-center justify-center">
                       <Check className="w-2.5 h-2.5" />
                     </div>
                   )}
                 </div>
-                <div className="text-[11px] font-mono text-[#888888] mb-2">{std.subtitle}</div>
-                <p className="text-[11px] text-[#4d4d4d] leading-normal">{std.description}</p>
+                <div className="text-[11px] font-mono text-[#888888] dark:text-[#a3a3a3] mb-2">{std.subtitle}</div>
+                <p className="text-[11px] text-[#4d4d4d] dark:text-[#a3a3a3] leading-normal">{std.description}</p>
               </div>
             </button>
           );

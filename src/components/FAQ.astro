@@ -31,32 +31,32 @@ const faqs = [
 const faqSchema = generateFAQSchema(faqs);
 ---
 
-<section class="py-16 sm:py-24 bg-white border-b border-[#ebebeb]">
+<section class="py-16 sm:py-24 bg-white dark:bg-[#0a0a0a] border-b border-[#ebebeb] dark:border-[#262626] transition-colors">
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     <div class="text-center space-y-3">
-      <h2 class="text-xs font-mono font-medium uppercase tracking-wider text-[#888888]">
+      <h2 class="text-xs font-mono font-medium uppercase tracking-wider text-[#888888] dark:text-[#a3a3a3]">
         Got Questions?
       </h2>
-      <p class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#171717]">
+      <p class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#171717] dark:text-[#f5f5f5]">
         Frequently Asked Questions
       </p>
-      <p class="text-sm text-[#4d4d4d]">
+      <p class="text-sm text-[#4d4d4d] dark:text-[#a3a3a3]">
         Everything you need to know about PDF/A standards and conversion.
       </p>
     </div>
 
     <div class="space-y-4">
       {faqs.map((faq) => (
-        <details class="group rounded-2xl bg-[#fafafa] border border-[#ebebeb] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all hover:border-[#a1a1a1]">
-          <summary class="flex items-center justify-between font-semibold text-base text-[#171717] gap-4">
+        <details class="group rounded-2xl bg-[#fafafa] dark:bg-[#121212] border border-[#ebebeb] dark:border-[#262626] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all hover:border-[#a1a1a1] dark:hover:border-[#404040]">
+          <summary class="flex items-center justify-between font-semibold text-base text-[#171717] dark:text-[#f5f5f5] gap-4">
             <span>{faq.question}</span>
-            <span class="w-6 h-6 rounded-full bg-white border border-[#ebebeb] flex items-center justify-center font-mono text-xs text-[#888888] shrink-0 group-open:rotate-180 transition-transform">
+            <span class="w-6 h-6 rounded-full bg-white dark:bg-[#171717] border border-[#ebebeb] dark:border-[#262626] flex items-center justify-center font-mono text-xs text-[#888888] dark:text-[#a3a3a3] shrink-0 group-open:rotate-180 transition-transform">
               ↓
             </span>
           </summary>
-          <p class="mt-4 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed pt-2 border-t border-[#ebebeb]">
+          <p class="mt-4 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a3a3a3] leading-relaxed pt-2 border-t border-[#ebebeb] dark:border-[#262626]">
             {faq.answer}
           </p>
         </details>
