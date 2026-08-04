@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     --canvas: #ffffff;
@@ -30,14 +32,14 @@
     --on-primary: #0a0a0a;
   }
 
-  body {
+  html, body {
     background-color: var(--canvas);
     color: var(--ink);
     font-family: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   }
 
   ::selection {
@@ -46,7 +48,7 @@
   }
 }
 
-/* Linear & Vercel Inspired Micro-animations & Aesthetics */
+/* Linear & Vercel Micro-animations */
 @keyframes subtle-float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-4px); }
